@@ -5,3 +5,7 @@
   --semiDarkBlue: #161d2f;
   --greyishBlue: #5a698f;
 }
+
+body {
+  font-family: var(--type-outfit);
+}

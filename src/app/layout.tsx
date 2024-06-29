@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { typeOutfit } from '@/functions/fonts';
 
 export const metadata: Metadata = {
   title: 'Home | Entertainment app',
@@ -11,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className={typeOutfit.className} lang="en">
       <body>{children}</body>
     </html>
   );
