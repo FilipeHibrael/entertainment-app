@@ -3,18 +3,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  grid-row: 1 / 3;
   background-color: var(--semiDarkBlue);
   max-width: max-content;
-  height: 480px;
+  height: 580px;
   padding: 2rem 1.5rem;
-  margin: 1rem;
-  border-radius: 1rem;
+  margin: 1.5rem;
+  border-radius: 0.5rem;
 }
 
 .navIcons {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 .navIcons a {

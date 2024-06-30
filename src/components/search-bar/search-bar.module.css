@@ -1,0 +1,46 @@
+.form {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 1.5rem 1.5rem 0;
+}
+
+.iconSearch svg {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}
+
+.form input {
+  font: inherit;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: inherit;
+  background: none;
+  padding: 0.5rem 0;
+  border: none;
+  border-bottom: 1px solid transparent;
+  caret-color: var(--red);
+}
+
+.form input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--greyishBlue);
+}
+
+.form button {
+  font: inherit;
+  font-size: 500;
+  color: inherit;
+  background-color: var(--greyishBlue);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.form button:hover {
+  opacity: 0.5;
+}
