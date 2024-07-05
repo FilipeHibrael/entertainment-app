@@ -11,7 +11,7 @@ export default async function Home() {
         data={data}
         cardStyle="banner"
         contentStyle="overflow"
-        header={false}
+        header={true}
       />
     </main>
   );

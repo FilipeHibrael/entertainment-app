@@ -1,13 +1,14 @@
-import { TrendingMedia } from '@/types/types';
+import { MediaListType } from '@/types/types';
 import styles from './media-list.module.css';
 import CardBanner from '../media-cards/card-banner';
+import MediaListHedaer from './media-list-header';
 
 type PropsType = {
   header: boolean;
   contentStyle: 'grid' | 'overflow';
   cardStyle: 'normal' | 'banner';
   length?: number;
-  data: TrendingMedia;
+  data: MediaListType;
 };
 
 export default function MediaList({
@@ -18,15 +19,14 @@ export default function MediaList({
   data,
 }: PropsType) {
   return (
-    <section>
-      {cardStyle === 'banner' && (
-        <ul className={`${styles.content} ${contentStyle}`}>
-          {data.results.map((media) => {
-            if (cardStyle === 'banner')
-              return <CardBanner key={media.id} media={media} />;
-          })}
-        </ul>
-      )}
+    <section className={styles.container}>
+      {header && <MediaListHedaer listType={'test'} mediaType={'tv'}  />}
+      <ul className={`${styles.content} ${contentStyle}`}>
+        {data.results.map((media) => {
+          if (cardStyle === 'banner')
+            return <CardBanner key={media.id} media={media} />;
+        })}
+      </ul>
     </section>
   );
 }

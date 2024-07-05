@@ -36,6 +36,6 @@
 }
 
 .card:hover div,
-.card:hover .cardTitle {
+.card:hover h3 {
   transform: translateY(-0.5rem);
 }

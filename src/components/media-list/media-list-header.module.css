@@ -1,0 +1,45 @@
+.header {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  letter-spacing: 0.125rem;
+  padding: 0.125rem 0.5rem;
+  border: 2px solid var(--pureWhite);
+  border-radius: 0.25rem;
+}
+
+.link {
+  justify-self: end;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.875rem;
+  color: var(--greyishBlue);
+  position: relative;
+}
+
+.link::before {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: var(--greyishBlue);
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover::before {
+  opacity: 1;
+}
