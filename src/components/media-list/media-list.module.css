@@ -1,0 +1,71 @@
+.container {
+  margin-right: 1.5rem;
+}
+
+.trendingHeader {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.headerTitle {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.headerLabel {
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  letter-spacing: 0.125rem;
+  padding: 0.125rem 0.5rem;
+  border: 2px solid var(--pureWhite);
+  border-radius: 0.25rem;
+}
+
+.headerLink {
+  justify-self: end;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.875rem;
+  color: var(--greyishBlue);
+  position: relative;
+}
+
+.headerLink::before {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: var(--greyishBlue);
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.headerLink:hover::before {
+  opacity: 1;
+}
+
+.content {
+  width: calc(100% - 154px);
+  overflow-x: scroll;
+  position: absolute;
+  display: flex;
+  gap: 2rem;
+}
+
+.content::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+.content::-webkit-scrollbar-track {
+  background: transparent;
+  padding: 2px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: var(--greyishBlue);
+  border-radius: 1rem;
+}

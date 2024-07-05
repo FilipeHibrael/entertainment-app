@@ -1,0 +1,41 @@
+.card {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 240px;
+  min-width: 480px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  transition: background-size 0.2s ease;
+}
+
+.card a {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  inset: 0;
+}
+
+.card div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: 300;
+  transition: transform 0.2s ease;
+}
+
+.card h3 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover div,
+.card:hover .cardTitle {
+  transform: translateY(-0.5rem);
+}
