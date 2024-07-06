@@ -1,5 +1,14 @@
 export type MediaType = 'tv' | 'movie';
 
+export type ListType =
+  | 'trending'
+  | 'now-playing'
+  | 'upcoming'
+  | 'airing-today'
+  | 'on-the-air'
+  | 'popular'
+  | 'top-rated';
+
 export type Media = {
   id: number;
   backdrop_path: string;
@@ -18,6 +27,8 @@ export type MovieMedia = Media & {
 
 export type MediaListType = {
   page: string;
+  mediaType: MediaType;
+  listType: ListType;
   results: TvMedia[] | MovieMedia[];
 };
 

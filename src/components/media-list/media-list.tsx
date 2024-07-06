@@ -20,7 +20,9 @@ export default function MediaList({
 }: PropsType) {
   return (
     <section className={styles.container}>
-      {header && <MediaListHedaer listType={'test'} mediaType={'tv'}  />}
+      {header && (
+        <MediaListHedaer listType={data.listType} mediaType={data.mediaType} />
+      )}
       <ul className={`${styles.content} ${contentStyle}`}>
         {data.results.map((media) => {
           if (cardStyle === 'banner')

@@ -1,8 +1,8 @@
-import getTrendingMedia from '@/actions/get-trending-media';
+import getMediaList from '@/actions/get-media-list';
 import MediaList from '@/components/media-list/media-list';
 
 export default async function Home() {
-  const { data } = await getTrendingMedia('tv');
+  const { data } = await getMediaList('movie', 'upcoming');
 
   if (!data) return null;
   return (
