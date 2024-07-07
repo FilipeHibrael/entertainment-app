@@ -1,18 +1,17 @@
-import getMediaList from '@/actions/get-media-list';
-import MediaList from '@/components/media-list/media-list';
+import MediaList, { MediaListProps } from '@/components/media-list/media-list';
 
-export default async function Home() {
-  const { data } = await getMediaList('movie', 'upcoming');
+/* prettier-ignore */
+const mediaLists: MediaListProps[] = [
+  { mediaType: 'movie', listType: 'trending', cardStyle: 'banner', contentStyle: 'overflow', header: true },
+  { mediaType: 'tv', listType: 'trending', cardStyle: 'banner', contentStyle: 'overflow', header: true },
+];
 
-  if (!data) return null;
+export default function Home() {
   return (
     <main>
-      <MediaList
-        data={data}
-        cardStyle="banner"
-        contentStyle="overflow"
-        header={true}
-      />
+      {mediaLists.map((config, i) => (
+        <MediaList key={i} {...config} />
+      ))}
     </main>
   );
 }

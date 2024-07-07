@@ -1,11 +1,11 @@
 .container {
+  max-width: calc(100vw - 170px);
   margin-right: 1.5rem;
+  margin-bottom: 4rem;
 }
 
 .content {
-  width: calc(100% - 154px);
   overflow-x: scroll;
-  position: absolute;
   display: flex;
   gap: 2rem;
 }

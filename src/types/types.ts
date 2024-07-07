@@ -25,10 +25,8 @@ export type MovieMedia = Media & {
   release_date: string;
 };
 
-export type MediaListType = {
+export type MediaList = {
   page: string;
-  mediaType: MediaType;
-  listType: ListType;
   results: TvMedia[] | MovieMedia[];
 };
 
