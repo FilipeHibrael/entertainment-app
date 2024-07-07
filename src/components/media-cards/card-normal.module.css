@@ -1,0 +1,28 @@
+.image {
+  min-width: 320px;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.image img {
+  height: 100%;
+  transition: scale 0.2s ease;
+}
+
+.card:hover .image img {
+  scale: 1.1;
+}
+
+.card div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: 300;
+  font-size: 0.875rem;
+}
+
+.card h3 {
+  font-weight: 500;
+  font-size: 1.25rem;
+}

@@ -3,8 +3,9 @@ import styles from './media-list.module.css';
 import CardBanner from '../media-cards/card-banner';
 import MediaListHedaer from './media-list-header';
 import getMediaList from '@/actions/get-media-list';
+import CardNormal from '../media-cards/card-normal';
 
- export type MediaListProps = {
+export type MediaListProps = {
   mediaType: MediaType;
   listType: ListType;
   header: boolean;
@@ -29,6 +30,8 @@ export default async function MediaList(props: MediaListProps) {
         {data.results.map((media) => {
           if (props.cardStyle === 'banner')
             return <CardBanner key={media.id} media={media} />;
+          else if (props.cardStyle === 'normal')
+            return <CardNormal key={media.id} media={media} />;
         })}
       </ul>
     </section>
