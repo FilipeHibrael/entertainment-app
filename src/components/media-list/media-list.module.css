@@ -4,23 +4,29 @@
   margin-bottom: 4rem;
 }
 
-.content {
+.content:global(.overflow) {
   overflow-x: scroll;
   display: flex;
   align-items: start;
   gap: 2rem;
 }
 
-.content::-webkit-scrollbar {
+.content:global(.overflow)::-webkit-scrollbar {
   height: 0.5rem;
 }
 
-.content::-webkit-scrollbar-track {
+.content:global(.overflow)::-webkit-scrollbar-track {
   background: transparent;
   padding: 2px;
 }
 
-.content::-webkit-scrollbar-thumb {
+.content:global(.overflow)::-webkit-scrollbar-thumb {
   background-color: var(--greyishBlue);
   border-radius: 1rem;
+}
+
+.content:global(.grid) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+  gap: 2rem;
 }
