@@ -8,8 +8,8 @@
 
 body {
   display: grid;
-  grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
+  justify-content: end;
   font-family: var(--type-outfit);
   color: var(--pureWhite);
   background-color: var(--darkBlue);

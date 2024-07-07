@@ -3,13 +3,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  grid-row: 1 / 3;
+  align-self: flex-start;
   background-color: var(--semiDarkBlue);
   max-width: max-content;
   height: 580px;
   padding: 2rem 1.5rem;
   margin: 1.5rem;
   border-radius: 0.5rem;
+  position: fixed;
 }
 
 .navIcons {
