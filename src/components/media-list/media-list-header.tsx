@@ -11,9 +11,10 @@ export default function MediaListHedaer({
   return (
     <div className={styles.header}>
       <h2 className={styles.title}>
-        {listType[0].toLocaleUpperCase() + listType.slice(1)}
+        {listType[0].toLocaleUpperCase() +
+          listType.slice(1).replaceAll('_', ' ')}
       </h2>
-      <span className={styles.label}>
+      <span className={`${styles.label} ${mediaType}`}>
         {mediaType === 'tv' ? 'tv series' : 'movies'}
       </span>
       <Link className={styles.link} href={`/${mediaType}/${listType}`}>

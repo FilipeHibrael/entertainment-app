@@ -2,12 +2,12 @@ export type MediaType = 'tv' | 'movie';
 
 export type ListType =
   | 'trending'
-  | 'now-playing'
+  | 'now_playing'
   | 'upcoming'
-  | 'airing-today'
-  | 'on-the-air'
+  | 'airing_today'
+  | 'on_the_air'
   | 'popular'
-  | 'top-rated';
+  | 'top_rated';
 
 export type Media = {
   id: number;

@@ -20,6 +20,11 @@
   border-radius: 0.25rem;
 }
 
+.label:global(.tv) {
+  background-color: var(--pureWhite);
+  color: var(--darkBlue);
+}
+
 .link {
   justify-self: end;
   text-transform: uppercase;
