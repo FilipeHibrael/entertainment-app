@@ -4,12 +4,14 @@ import { ListType, MediaList, MediaType } from '@/types/types';
 
 export default async function getMediaList(
   mediaType: MediaType,
-  listType: ListType
+  listType: ListType,
+  pageNumber?: number
 ) {
   try {
     let url;
-    if (listType === 'trending') url = GET_TRENDING_MEDIA(mediaType).url;
-    else url = GET_MEDIA_LIST(mediaType, listType).url;
+    if (listType === 'trending')
+      url = GET_TRENDING_MEDIA(mediaType, pageNumber || 1).url;
+    else url = GET_MEDIA_LIST(mediaType, listType, pageNumber || 1).url;
 
     const options = {
       method: 'GET',

@@ -17,7 +17,7 @@ export default function MediaListHedaer({
       <span className={`${styles.label} ${mediaType}`}>
         {mediaType === 'tv' ? 'tv series' : 'movies'}
       </span>
-      <Link className={styles.link} href={`/${mediaType}/${listType}`}>
+      <Link className={styles.link} href={`/${mediaType}/${listType}/1`}>
         see more
       </Link>
     </div>

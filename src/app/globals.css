@@ -15,6 +15,11 @@ body {
   background-color: var(--darkBlue);
 }
 
+main {
+  width: calc(100vw - 194px);
+  margin-right: 2rem;
+}
+
 * {
   padding: 0;
   margin: 0;

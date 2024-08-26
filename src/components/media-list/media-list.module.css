@@ -1,6 +1,4 @@
 .container {
-  max-width: calc(100vw - 170px);
-  margin-right: 1.5rem;
   margin-bottom: 4rem;
 }
 
@@ -27,6 +25,6 @@
 
 .content:global(.grid) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   gap: 2rem;
 }

@@ -12,10 +12,11 @@ export type MediaListProps = {
   contentStyle: 'grid' | 'overflow';
   cardStyle: 'normal' | 'banner';
   length?: number;
+  pageNumber?: number;
 };
 
 export default async function MediaList(props: MediaListProps) {
-  const { data, error } = await getMediaList(props.mediaType, props.listType);
+  const { data, error } = await getMediaList(props.mediaType, props.listType, props.pageNumber);
 
   if (!data) return <p>{error}</p>;
   return (
@@ -27,12 +28,14 @@ export default async function MediaList(props: MediaListProps) {
         />
       )}
       <ul className={`${styles.content} ${props.contentStyle}`}>
-        {data.results.slice(0, props.length || data.results.length).map((media) => {
-          if (props.cardStyle === 'banner')
-            return <CardBanner key={media.id} media={media} />;
-          else if (props.cardStyle === 'normal')
-            return <CardNormal key={media.id} media={media} />;
-        })}
+        {data.results
+          .slice(0, props.length || data.results.length)
+          .map((media) => {
+            if (props.cardStyle === 'banner')
+              return <CardBanner key={media.id} media={media} />;
+            else if (props.cardStyle === 'normal')
+              return <CardNormal key={media.id} media={media} />;
+          })}
       </ul>
     </section>
   );
