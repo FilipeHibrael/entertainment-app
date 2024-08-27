@@ -1,0 +1,44 @@
+.paginationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: max-content;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  border: 2px solid var(--pureWhite);
+  border-radius: 0.5rem;
+}
+
+.pageLabel {
+  background: var(--pureWhite);
+  color: var(--darkBlue);
+  padding: 0.75rem 1.5rem;
+}
+
+.paginationButton button {
+  font: inherit;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  color: var(--pureWhite);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.prevButton svg {
+  rotate: 180deg;
+}
+
+.prevButton svg,
+.nextButton svg {
+  transition: transform 0.2s ease-in-out;
+}
+.prevButton:hover svg,
+.nextButton:hover svg {
+  transform: translateX(4px);
+}
