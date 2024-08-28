@@ -17,10 +17,10 @@ export default function Sidenav() {
         <Link href={'/'}>
           <IconNavHome />
         </Link>
-        <Link href={'/movies'}>
+        <Link href={'/movie'}>
           <IconNavMovies />
         </Link>
-        <Link href={'/tv-series'}>
+        <Link href={'/tv'}>
           <IconNavTvSeries />
         </Link>
       </div>

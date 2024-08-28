@@ -14,3 +14,7 @@ export function GET_MEDIA_LIST(
 ) {
   return { url: `${API_URL}/${mediaType}/${listType}?page=${pageNumber}` };
 }
+
+export function GET_GENRE_LIST(mediaType: MediaType) {
+  return { url: `${API_URL}/genre/${mediaType}/list` };
+}

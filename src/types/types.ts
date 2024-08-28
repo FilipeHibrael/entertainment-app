@@ -30,6 +30,11 @@ export type MediaList = {
   results: TvMedia[] | MovieMedia[];
 };
 
+export type Genre = {
+  id: number;
+  name: string;
+};
+
 export function isMovieMedia(media: Media): media is MovieMedia {
   return 'title' in media && 'release_date' in media;
 }

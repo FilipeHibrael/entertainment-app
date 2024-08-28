@@ -12,7 +12,7 @@ type Params = {
 
 export default function MediaListPage({ params }: Params) {
   const page = Number(params.pageNumber);
-  const mediaList: MediaListProps = {
+  const mediaListProps: MediaListProps = {
     mediaType: params.mediaType,
     listType: params.listType,
     header: false,
@@ -27,8 +27,8 @@ export default function MediaListPage({ params }: Params) {
           params.listType.slice(1).replaceAll('_', ' ') +
           (params.mediaType === 'movie' ? ' movies' : ' tv series')}
       </h1>
-      <MediaList {...mediaList} pageNumber={page * 2 - 1} />
-      <MediaList {...mediaList} pageNumber={page * 2} />
+      <MediaList {...mediaListProps} pageNumber={page * 2 - 1} />
+      <MediaList {...mediaListProps} pageNumber={page * 2} />
       <PaginationButton page={page} />
     </main>
   );
