@@ -1,0 +1,29 @@
+.genreList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.genreLink {
+  text-align: center;
+  background: var(--semiDarkBlue);
+  border-radius: 0.5rem;
+}
+
+.genreLink a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.genreList.movie .genreLink:nth-child(odd) {
+  background: var(--seaGreen);
+}
+
+.genreList.tv .genreLink:nth-child(odd) {
+  background: var(--darkSeaGreen);
+}
