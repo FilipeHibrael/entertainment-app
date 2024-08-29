@@ -18,3 +18,13 @@ export function GET_MEDIA_LIST(
 export function GET_GENRE_LIST(mediaType: MediaType) {
   return { url: `${API_URL}/genre/${mediaType}/list` };
 }
+
+export function GET_MEDIA_LIST_BY_GENRE(
+  mediaType: MediaType,
+  genreId: number,
+  pageNumber: number
+) {
+  return {
+    url: `${API_URL}/discover/${mediaType}?page=${pageNumber}&with_genres=${genreId}`,
+  };
+}

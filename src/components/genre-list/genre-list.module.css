@@ -8,6 +8,7 @@
   text-align: center;
   background: var(--semiDarkBlue);
   border-radius: 0.5rem;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .genreLink a {
@@ -18,6 +19,10 @@
   width: 100%;
   height: 100%;
   cursor: pointer;
+}
+
+.genreLink:hover {
+  opacity: 0.5;
 }
 
 .genreList.movie .genreLink:nth-child(odd) {

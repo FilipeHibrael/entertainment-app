@@ -11,7 +11,7 @@ export default async function GenreList({ mediaType }: GenreListProps) {
   const { data, error } = await getGenreList(mediaType);
 
   function formatGenreName(name: String) {
-    return name.replace(/&/g, 'and').replace(/\s+/g, '-').toLowerCase();
+    return name.replace(/&/g, 'and').replace(/\s+/g, '_').toLowerCase();
   }
 
   if (!data?.genres) return <p>{error}</p>;
@@ -19,7 +19,7 @@ export default async function GenreList({ mediaType }: GenreListProps) {
     <ul className={`${styles.genreList} ${styles[mediaType]}`}>
       {data.genres.map((genre) => (
         <li key={genre.id} className={styles.genreLink}>
-          <Link href={`/${mediaType}/genre/${formatGenreName(genre.name)}`}>
+          <Link href={`/${mediaType}/genre/${formatGenreName(genre.name)}/1`}>
             {genre.name}
           </Link>
         </li>
