@@ -1,13 +1,112 @@
 .container {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
   gap: 4rem;
   margin-bottom: 4rem;
   margin-left: 3rem;
 }
 
+.container h2 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
 .posterImage {
-  max-width: 416px;
-  max-height: 624px;
+  position: sticky;
+  top: 1.5rem;
+  width: 404px;
+  height: 606px;
   border-radius: 0.5rem;
   overflow: hidden;
+}
+
+.genres {
+  margin-bottom: 2rem;
+}
+
+.genres ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.genres li {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--pureWhite);
+  color: var(--darkBlue);
+}
+
+.synopsis {
+  margin-bottom: 2rem;
+}
+
+.synopsis p {
+  max-width: 60ch;
+  font-weight: 300;
+}
+
+.cast {
+  margin-bottom: 2rem;
+}
+
+.cast ul {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cast ul li {
+  letter-spacing: 0.05rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 2px solid var(--pureWhite);
+  color: var(--pureWhite);
+}
+
+.externalLinks a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: max-content;
+  border-radius: 0.5rem;
+  color: var(--pureWhite);
+  background: var(--greyishBlue);
+  padding: 0.75rem 1rem;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.externalLinks a:hover {
+  opacity: 0.5;
+}
+
+.rating {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.rating .ratingNumber {
+  font-size: 2.75rem;
+}
+
+.rating .ratingNumber span {
+  color: gray;
+  font-size: 1.5rem;
+}
+
+.rating .votes {
+  color: var(--pureWhite);
+  margin-top: 0.5rem;
+}
+
+.rating div {
+  display: flex;
+  gap: 2rem;
 }

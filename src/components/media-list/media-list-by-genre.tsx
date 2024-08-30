@@ -28,9 +28,21 @@ export default async function MediaListByGenre(props: MediaListByGenreProps) {
           .slice(0, props.length || data.results.length)
           .map((media) => {
             if (props.cardStyle === 'banner')
-              return <CardBanner key={media.id} media={media} />;
+              return (
+                <CardBanner
+                  key={media.id}
+                  media={media}
+                  mediaType={props.mediaType}
+                />
+              );
             else if (props.cardStyle === 'normal')
-              return <CardNormal key={media.id} media={media} />;
+              return (
+                <CardNormal
+                  key={media.id}
+                  media={media}
+                  mediaType={props.mediaType}
+                />
+              );
           })}
       </ul>
     </section>

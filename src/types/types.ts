@@ -45,6 +45,8 @@ export type MediaDetails = {
   status: string;
   genres: Genre[];
   spoken_languages: { english_name: string }[];
+  vote_average: number;
+  vote_count: number;
 };
 
 export type MovieMediaDetails = MediaDetails & {
