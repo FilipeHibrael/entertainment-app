@@ -1,0 +1,30 @@
+.title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: gray;
+  font-weight: 300;
+  margin-bottom: 4rem;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.details h2 {
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: gray;
+  margin-bottom: 0.5rem;
+}
+
+.details p {
+    font-weight: 500;
+    font-size: 1.125rem;
+  }

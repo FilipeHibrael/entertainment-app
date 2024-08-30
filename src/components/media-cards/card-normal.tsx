@@ -16,7 +16,7 @@ export default function CardNormal({ media, mediaType }: CardNormalProps) {
 
   return (
     <li className={styles.card}>
-      <Link href={`${mediaType}/id/${media.id}`}>
+      <Link href={`/${mediaType}/id/${media.id}`}>
         <div className={styles.image}>
           <Image alt="media image" src={urlImage} width={480} height={720} />
         </div>

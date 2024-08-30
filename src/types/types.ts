@@ -56,6 +56,7 @@ export type MovieMediaDetails = MediaDetails & {
 export type TvMediaDetails = MediaDetails & {
   name: string;
   first_air_date: string;
+  last_air_date: string;
 };
 
 export function isMovieMediaDetails(

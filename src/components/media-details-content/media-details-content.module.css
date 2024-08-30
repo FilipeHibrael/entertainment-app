@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  margin-left: 3rem;
+}
+
+.posterImage {
+  max-width: 416px;
+  max-height: 624px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}

@@ -15,7 +15,7 @@ export default function CardBanner({ media, mediaType }: CardBannerProps) {
 
   return (
     <li className={styles.card} style={{ backgroundImage: `url(${urlImage})` }}>
-      <Link href={`${mediaType}/id/${media.id}`}>
+      <Link href={`/${mediaType}/id/${media.id}`}>
         {isMovieMedia(media) && (
           <MovieCardText title={media.title} releaseDate={media.release_date} />
         )}
