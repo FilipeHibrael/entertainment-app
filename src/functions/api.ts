@@ -28,3 +28,7 @@ export function GET_MEDIA_LIST_BY_GENRE(
     url: `${API_URL}/discover/${mediaType}?page=${pageNumber}&with_genres=${genreId}`,
   };
 }
+
+export function GET_MEDIA_BY_ID(mediaType: MediaType, id: number) {
+  return { url: `${API_URL}/${mediaType}/${id}` };
+}
