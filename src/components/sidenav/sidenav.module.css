@@ -37,6 +37,10 @@
   fill: var(--red);
 }
 
+.navIcons a.active path {
+  fill: var(--pureWhite);
+}
+
 .avatar {
   width: 2rem;
   height: 2rem;

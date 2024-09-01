@@ -1,3 +1,4 @@
+'use client';
 import IconLogo from '@/icons/icon-logo';
 import IconNavHome from '@/icons/icon-nav-home';
 import IconNavMovies from '@/icons/icon-nav-movies';
@@ -5,8 +6,12 @@ import IconNavTvSeries from '@/icons/icon-nav-tv-series';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './sidenav.module.css';
+import { usePathname } from 'next/navigation';
+import React from 'react';
 
 export default function Sidenav() {
+  const pathname = usePathname();
+
   return (
     <nav className={styles.nav}>
       <Link href={'/'}>
@@ -14,13 +19,19 @@ export default function Sidenav() {
       </Link>
 
       <div className={styles.navIcons}>
-        <Link href={'/'}>
+        <Link href={'/'} className={pathname === '/' ? styles.active : ''}>
           <IconNavHome />
         </Link>
-        <Link href={'/movie'}>
+        <Link
+          href={'/movie'}
+          className={pathname.startsWith('/movie') ? styles.active : ''}
+        >
           <IconNavMovies />
         </Link>
-        <Link href={'/tv'}>
+        <Link
+          href={'/tv'}
+          className={pathname.startsWith('/tv') ? styles.active : ''}
+        >
           <IconNavTvSeries />
         </Link>
       </div>
@@ -28,7 +39,7 @@ export default function Sidenav() {
       <div className={styles.avatar}>
         <Image
           src={'/images/image-avatar.png'}
-          alt="iamge avatar"
+          alt="image avatar"
           width={36}
           height={36}
         />
