@@ -1,0 +1,19 @@
+.label {
+  display: flex;
+  align-items: center;
+  max-width: max-content;
+  border: 2px solid var(--pureWhite);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.label a {
+  padding: 0.5rem 0;
+  text-align: center;
+  width: 6rem;
+}
+
+.label a.active {
+  background: var(--pureWhite);
+  color: var(--darkBlue);
+}

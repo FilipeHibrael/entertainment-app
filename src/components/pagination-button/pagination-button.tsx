@@ -17,7 +17,7 @@ function PaginationButton({ page, totalPages }: PaginationButtonProps) {
   }
 
   function handleNext() {
-    if (page <= totalPages)
+    if (page < +(totalPages / 2).toFixed(0))
       router.push(`${pathname.replace(/\/\d+$/, '')}/${page + 1}`);
   }
 
@@ -27,7 +27,7 @@ function PaginationButton({ page, totalPages }: PaginationButtonProps) {
         <IconArrow /> Prev
       </button>
       <div className={styles.pageLabel}>
-        Page {page} of {totalPages}
+        Page {page} of {(totalPages / 2).toFixed(0)}
       </div>
       <button onClick={handleNext} className={styles.nextButton}>
         Next <IconArrow />

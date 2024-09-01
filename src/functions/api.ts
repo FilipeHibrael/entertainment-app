@@ -30,6 +30,16 @@ export function GET_MEDIA_LIST_BY_GENRE(
   };
 }
 
+export function GET_MEDIA_LIST_BY_SEARCH(
+  mediaType: MediaType,
+  searchTerm: string,
+  pageNumber: number
+) {
+  return {
+    url: `${API_URL}/search/${mediaType}?query=${searchTerm}&page=${pageNumber}`,
+  };
+}
+
 export function GET_MEDIA_BY_ID(mediaType: MediaType, id: number) {
   return { url: `${API_URL}/${mediaType}/${id}` };
 }

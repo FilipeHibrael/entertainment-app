@@ -13,7 +13,7 @@ type Params = {
   };
 };
 
-export default async function Genrepage({ params }: Params) {
+export default async function GenrePage({ params }: Params) {
   const page = Number(params.pageNumber);
   const genreName = params.genre
     .replace(/_/g, ' ')
