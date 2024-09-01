@@ -1,6 +1,6 @@
 'use server';
 import { GET_MEDIA_LIST_BY_GENRE } from '@/functions/api';
-import { MediaList, MediaType } from '@/types/types';
+import { MediaListData, MediaType } from '@/types/types';
 
 export default async function getMediaListByGenre(
   mediaType: MediaType,
@@ -24,7 +24,7 @@ export default async function getMediaListByGenre(
 
     const response = await fetch(url, options);
     if (!response.ok) throw new Error('Unexpected error, try again later.');
-    const data = (await response.json()) as MediaList;
+    const data = (await response.json()) as MediaListData;
 
     return { data, error: '' };
   } catch (error) {

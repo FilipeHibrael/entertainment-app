@@ -20,7 +20,7 @@ export default async function Genrepage({ params }: Params) {
     .replace(/\band\b/g, '&')
     .replace(/\b\w/g, (char) => char.toUpperCase());
 
-  const { data, error } = await getGenreList(params.mediaType);
+  const { data } = await getGenreList(params.mediaType);
   const genreId =
     data?.genres.find((genre) => genre.name === genreName)?.id || 1;
 
@@ -46,7 +46,10 @@ export default async function Genrepage({ params }: Params) {
           {...mediaListsConfig}
         />
       ))}
-      <PaginationButton page={Number(params.pageNumber)} />
+      <PaginationButton
+        page={Number(params.pageNumber)}
+        totalPages={mediaLists[0].data?.total_pages || 1}
+      />
     </main>
   );
 }

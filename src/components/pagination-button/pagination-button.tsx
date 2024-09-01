@@ -3,17 +3,22 @@ import IconArrow from '@/icons/icon-arrow';
 import { useRouter, usePathname } from 'next/navigation';
 import styles from './pagination-button.module.css';
 
-function PaginationButton({ page }: { page: number }) {
+type PaginationButtonProps = {
+  page: number;
+  totalPages: number;
+};
+
+function PaginationButton({ page, totalPages }: PaginationButtonProps) {
   const router = useRouter();
   const pathname = usePathname();
 
   function handlePrev() {
     if (page > 1) router.push(`${pathname.replace(/\/\d+$/, '')}/${page - 1}`);
-    else return;
   }
 
   function handleNext() {
-    router.push(`${pathname.replace(/\/\d+$/, '')}/${page + 1}`);
+    if (page <= totalPages)
+      router.push(`${pathname.replace(/\/\d+$/, '')}/${page + 1}`);
   }
 
   return (
@@ -21,7 +26,9 @@ function PaginationButton({ page }: { page: number }) {
       <button onClick={handlePrev} className={styles.prevButton}>
         <IconArrow /> Prev
       </button>
-      <div className={styles.pageLabel}>Page {page}</div>
+      <div className={styles.pageLabel}>
+        Page {page} of {totalPages}
+      </div>
       <button onClick={handleNext} className={styles.nextButton}>
         Next <IconArrow />
       </button>

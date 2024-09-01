@@ -29,6 +29,7 @@ export type MovieMedia = Media & {
 export type MediaListData = {
   page: string;
   results: TvMedia[] | MovieMedia[];
+  total_pages: number;
 };
 
 export function isMovieMedia(media: Media): media is MovieMedia {

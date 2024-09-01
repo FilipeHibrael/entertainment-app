@@ -41,7 +41,10 @@ export default async function MediaListPage({ params }: Params) {
           {...mediaListsConfig}
         />
       ))}
-      <PaginationButton page={page} />
+      <PaginationButton
+        page={page}
+        totalPages={mediaLists[0].data?.total_pages || 1}
+      />
     </main>
   );
 }
