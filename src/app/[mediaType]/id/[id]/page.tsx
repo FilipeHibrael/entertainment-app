@@ -24,6 +24,7 @@ export default async function MediaPage({ params }: Params) {
         data={data}
         credits={credits}
         exteralIds={exteralIds}
+        mediaType={params.mediaType}
       />
     </main>
   );
