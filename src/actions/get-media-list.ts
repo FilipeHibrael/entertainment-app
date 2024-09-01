@@ -1,6 +1,6 @@
 'use server';
 import { GET_MEDIA_LIST, GET_TRENDING_MEDIA } from '@/functions/api';
-import { ListType, MediaList, MediaType } from '@/types/types';
+import { ListType, MediaListData, MediaType } from '@/types/types';
 
 export default async function getMediaList(
   mediaType: MediaType,
@@ -23,7 +23,7 @@ export default async function getMediaList(
 
     const response = await fetch(url, options);
     if (!response.ok) throw new Error('Unexpected error, try again later.');
-    const data = (await response.json()) as MediaList;
+    const data = (await response.json()) as MediaListData;
 
     return { data, error: '' };
   } catch (error) {

@@ -1,6 +1,7 @@
-import MediaList, { MediaListProps } from '@/components/media-list/media-list';
+import getMediaList from '@/actions/get-media-list';
+import MediaList from '@/components/media-list/media-list';
 import PaginationButton from '@/components/pagination-button/pagination-button';
-import { ListType, MediaType } from '@/types/types';
+import { ListType, MediaListConfig, MediaType } from '@/types/types';
 
 type Params = {
   params: {
@@ -10,15 +11,21 @@ type Params = {
   };
 };
 
-export default function MediaListPage({ params }: Params) {
+export default async function MediaListPage({ params }: Params) {
   const page = Number(params.pageNumber);
-  const mediaListProps: MediaListProps = {
+
+  const mediaListsConfig: MediaListConfig = {
     mediaType: params.mediaType,
     listType: params.listType,
     header: false,
     cardStyle: 'normal',
     contentStyle: 'grid',
   };
+
+  const mediaLists = await Promise.all([
+    getMediaList(params.mediaType, params.listType, page * 2 - 1),
+    getMediaList(params.mediaType, params.listType, page * 2),
+  ]);
 
   return (
     <main>
@@ -27,8 +34,13 @@ export default function MediaListPage({ params }: Params) {
           params.listType.slice(1).replaceAll('_', ' ') +
           (params.mediaType === 'movie' ? ' movies' : ' tv series')}
       </h1>
-      <MediaList {...mediaListProps} pageNumber={page * 2 - 1} />
-      <MediaList {...mediaListProps} pageNumber={page * 2} />
+      {mediaLists.map((mediaList) => (
+        <MediaList
+          data={mediaList.data}
+          error={mediaList.error}
+          {...mediaListsConfig}
+        />
+      ))}
       <PaginationButton page={page} />
     </main>
   );

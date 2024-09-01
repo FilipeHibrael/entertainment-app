@@ -7,7 +7,8 @@ export type ListType =
   | 'airing_today'
   | 'on_the_air'
   | 'popular'
-  | 'top_rated';
+  | 'top_rated'
+  | 'genre';
 
 export type Media = {
   id: number;
@@ -25,7 +26,7 @@ export type MovieMedia = Media & {
   release_date: string;
 };
 
-export type MediaList = {
+export type MediaListData = {
   page: string;
   results: TvMedia[] | MovieMedia[];
 };
@@ -37,6 +38,15 @@ export function isMovieMedia(media: Media): media is MovieMedia {
 export function isTvMedia(media: Media): media is TvMedia {
   return 'name' in media && 'first_air_date' in media;
 }
+
+export type MediaListConfig = {
+  mediaType: MediaType;
+  listType: ListType;
+  header: boolean;
+  contentStyle: 'grid' | 'overflow';
+  cardStyle: 'normal' | 'banner';
+  length?: number;
+};
 
 export type MediaDetails = {
   overview: string;
