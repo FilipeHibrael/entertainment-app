@@ -11,8 +11,10 @@
   padding: 0.5rem 0;
   text-align: center;
   width: 6rem;
+  transition: all 0.2s ease-in-out;
 }
 
+.label a:hover,
 .label a.active {
   background: var(--pureWhite);
   color: var(--darkBlue);

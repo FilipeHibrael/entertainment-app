@@ -33,7 +33,7 @@ export default function SearchBar() {
         type="text"
         placeholder="Search for movies or TV series"
       />
-      <button type="submit">Sreach</button>
+      <button type="submit">Search</button>
     </form>
   );
 }
