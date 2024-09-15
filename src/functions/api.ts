@@ -51,7 +51,3 @@ export function GET_MEDIA_CREDITS(mediaType: MediaType, id: number) {
 export function GET_EXTERNAL_IDS(mediaType: MediaType, id: number) {
   return { url: `${API_URL}/${mediaType}/${id}/external_ids` };
 }
-
-export function GET_POPULAR_ACTORS_LIST(pageNumber: number) {
-  return { url: `${API_URL}/person/popular?page=${pageNumber}` };
-}

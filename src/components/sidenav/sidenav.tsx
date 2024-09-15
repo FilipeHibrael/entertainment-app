@@ -8,7 +8,6 @@ import Link from 'next/link';
 import styles from './sidenav.module.css';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import IconPerson from '@/icons/icon-person';
 
 export default function Sidenav() {
   const pathname = usePathname();
@@ -34,12 +33,6 @@ export default function Sidenav() {
           className={pathname.startsWith('/tv') ? styles.active : ''}
         >
           <IconNavTvSeries />
-        </Link>
-        <Link
-          href={'/actors'}
-          className={pathname.startsWith('/actors') ? styles.active : ''}
-        >
-          <IconPerson />
         </Link>
       </div>
 

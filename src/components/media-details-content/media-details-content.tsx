@@ -6,6 +6,7 @@ import styles from './media-details-content.module.css';
 import Link from 'next/link';
 import IconImdb from '@/icons/icon-imdb';
 import IconStar from '@/icons/icon-star';
+import MediaDetailsPoster from './media-details-poster/media-details-poster';
 
 type MediaDetailsContentProps = {
   data: MediaDetails;
@@ -28,9 +29,7 @@ export default function MediaDetailsContent({
 
   return (
     <div className={styles.container}>
-      <div className={styles.posterImage}>
-        <Image src={posterImageUrl} width={720} height={720} alt="poster" />
-      </div>
+      <MediaDetailsPoster imageUrl={posterImageUrl} />
       <div>
         <MediaDetailsHeader data={data} />
         <div className={styles.rating}>

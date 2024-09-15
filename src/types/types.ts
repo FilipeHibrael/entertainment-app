@@ -87,8 +87,3 @@ export type Genre = {
   id: number;
   name: string;
 };
-
-export type Actor = {
-  name: string;
-  profile_path: string;
-};

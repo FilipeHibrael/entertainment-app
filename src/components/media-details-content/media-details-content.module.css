@@ -13,15 +13,6 @@
   margin-bottom: 0.5rem;
 }
 
-.posterImage {
-  position: sticky;
-  top: 1.5rem;
-  width: 404px;
-  height: 606px;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-
 .genres {
   margin-bottom: 2rem;
 }
