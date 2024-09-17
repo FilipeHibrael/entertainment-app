@@ -2,6 +2,7 @@ import getMediaList from '@/actions/get-media-list';
 import MediaList from '@/components/media-list/media-list';
 import PaginationButton from '@/components/pagination-button/pagination-button';
 import { ListType, MediaListConfig, MediaType } from '@/types/types';
+import { Metadata } from 'next';
 
 type Params = {
   params: {
@@ -10,6 +11,15 @@ type Params = {
     pageNumber: String;
   };
 };
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const title =
+    params.listType[0].toUpperCase() +
+    params.listType.slice(1).replaceAll('_', ' ');
+  return {
+    title: `${title} | Entertainment App`,
+  };
+}
 
 export default async function MediaListPage({ params }: Params) {
   const page = Number(params.pageNumber);
@@ -34,8 +44,9 @@ export default async function MediaListPage({ params }: Params) {
           params.listType.slice(1).replaceAll('_', ' ') +
           (params.mediaType === 'movie' ? ' movies' : ' tv series')}
       </h1>
-      {mediaLists.map((mediaList) => (
+      {mediaLists.map((mediaList, i) => (
         <MediaList
+          key={i}
           data={mediaList.data}
           error={mediaList.error}
           {...mediaListsConfig}

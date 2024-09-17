@@ -3,6 +3,7 @@ import MediaList from '@/components/media-list/media-list';
 import PaginationButton from '@/components/pagination-button/pagination-button';
 import SearchLabel from '@/components/search-label/search-label';
 import { MediaListConfig, MediaType } from '@/types/types';
+import { Metadata } from 'next';
 
 type Params = {
   params: {
@@ -11,6 +12,13 @@ type Params = {
     pageNumber: String;
   };
 };
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const searchTerm = params.searchTerm.replace('%20', ' ');
+  return {
+    title: `${searchTerm} | Entertainment App`,
+  };
+}
 
 export default async function Searchpage({ params }: Params) {
   const page = Number(params.pageNumber);
@@ -39,8 +47,8 @@ export default async function Searchpage({ params }: Params) {
       >
         <SearchLabel />
         <h1 style={{ fontWeight: '300', fontSize: '2rem' }}>
-          Found {mediaLists[0].data?.total_results} results for "
-          {params.searchTerm.replace('%20', ' ')}"
+          Found {mediaLists[0].data?.total_results} results for &quot;
+          {params.searchTerm.replace('%20', ' ')}&quot;
         </h1>
       </div>
       {mediaLists.map((mediaList, i) => (
