@@ -2,10 +2,7 @@
 import { GET_EXTERNAL_IDS } from '@/functions/api';
 import { MediaType } from '@/types/types';
 
-export default async function getExternalIds(
-  mediaType: MediaType,
-  id: number
-) {
+export default async function getExternalIds(mediaType: MediaType, id: number) {
   try {
     const url = GET_EXTERNAL_IDS(mediaType, id).url;
 
@@ -15,6 +12,7 @@ export default async function getExternalIds(
         accept: 'application/json',
         Authorization: 'Bearer ' + process.env.API_KEY,
       },
+      next: { revalidate: 300 },
     };
 
     const response = await fetch(url, options);

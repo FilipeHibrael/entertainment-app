@@ -19,6 +19,7 @@ export default async function getMediaList(
         accept: 'application/json',
         Authorization: 'Bearer ' + process.env.API_KEY,
       },
+      next: { revalidate: 300 },
     };
 
     const response = await fetch(url, options);
