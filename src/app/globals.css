@@ -55,3 +55,9 @@ a {
     padding: 0 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem !important;
+  }
+}

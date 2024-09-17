@@ -40,6 +40,7 @@ export default async function Searchpage({ params }: Params) {
       <div
         style={{
           display: 'flex',
+          flexWrap: 'wrap',
           gap: '1rem',
           alignItems: 'center',
           marginBottom: '2rem',

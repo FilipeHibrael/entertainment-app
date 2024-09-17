@@ -39,3 +39,10 @@
 .card:hover h3 {
   transform: translateY(-0.5rem);
 }
+
+@media (max-width: 480px) {
+  .card {
+    height: 180px;
+    min-width: 360px; 
+  }
+}

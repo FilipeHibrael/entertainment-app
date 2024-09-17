@@ -83,3 +83,15 @@
     flex-direction: row;
   }
 }
+
+@media (max-width: 480px) {
+  .nav {
+    margin: 0;
+    border-radius: 0;
+    padding: 1rem;
+  }
+
+  .navIcons {
+    gap: 2rem;
+  }
+}
