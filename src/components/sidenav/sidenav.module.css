@@ -1,16 +1,18 @@
+.navWrapper {
+  position: fixed;
+}
+
 .nav {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  align-self: flex-start;
   background-color: var(--semiDarkBlue);
   max-width: max-content;
   height: 580px;
   padding: 2rem 1.5rem;
   margin: 1.5rem 2rem;
   border-radius: 0.5rem;
-  position: fixed;
 }
 
 .navIcons {
@@ -54,4 +56,30 @@
   border: 2px solid var(--pureWhite);
   inset: 0;
   position: absolute;
+}
+
+@media (max-width: 860px) {
+  .nav {
+    flex-direction: row;
+    height: max-content;
+    max-width: 100%;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .navIcons a svg {
+    pointer-events: none;
+  }
+
+  .navWrapper {
+    background: var(--darkBlue);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .navIcons {
+    flex-direction: row;
+  }
 }

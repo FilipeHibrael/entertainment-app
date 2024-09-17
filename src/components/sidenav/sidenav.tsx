@@ -13,37 +13,37 @@ export default function Sidenav() {
   const pathname = usePathname();
 
   return (
-    <nav className={styles.nav}>
-      <Link href={'/'}>
-        <IconLogo />
-      </Link>
-
-      <div className={styles.navIcons}>
-        <Link href={'/'} className={pathname === '/' ? styles.active : ''}>
-          <IconNavHome />
+    <div className={styles.navWrapper}>
+      <nav className={styles.nav}>
+        <Link href={'/'}>
+          <IconLogo />
         </Link>
-        <Link
-          href={'/movie'}
-          className={pathname.startsWith('/movie') ? styles.active : ''}
-        >
-          <IconNavMovies />
-        </Link>
-        <Link
-          href={'/tv'}
-          className={pathname.startsWith('/tv') ? styles.active : ''}
-        >
-          <IconNavTvSeries />
-        </Link>
-      </div>
-
-      <div className={styles.avatar}>
-        <Image
-          src={'/images/image-avatar.png'}
-          alt="image avatar"
-          width={36}
-          height={36}
-        />
-      </div>
-    </nav>
+        <div className={styles.navIcons}>
+          <Link href={'/'} className={pathname === '/' ? styles.active : ''}>
+            <IconNavHome />
+          </Link>
+          <Link
+            href={'/movie'}
+            className={pathname.startsWith('/movie') ? styles.active : ''}
+          >
+            <IconNavMovies />
+          </Link>
+          <Link
+            href={'/tv'}
+            className={pathname.startsWith('/tv') ? styles.active : ''}
+          >
+            <IconNavTvSeries />
+          </Link>
+        </div>
+        <div className={styles.avatar}>
+          <Image
+            src={'/images/image-avatar.png'}
+            alt="image avatar"
+            width={36}
+            height={36}
+          />
+        </div>
+      </nav>
+    </div>
   );
 }

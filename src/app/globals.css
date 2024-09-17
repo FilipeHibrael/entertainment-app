@@ -42,3 +42,16 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+@media (max-width: 860px) {
+  body {
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    width: 100vw;
+    margin: 0;
+    padding: 0 1rem;
+  }
+}
