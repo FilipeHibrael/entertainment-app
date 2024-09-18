@@ -13,6 +13,7 @@
 
 .details {
   display: flex;
+  flex-wrap: wrap;
   gap: 4rem;
   margin-bottom: 2rem;
 }
@@ -27,4 +28,18 @@
 .details p {
   font-weight: 500;
   font-size: 1.125rem;
+}
+
+@media (max-width: 1080px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    margin-bottom: 2rem;
+  }
+
+  .details {
+    gap: 2rem;
+  }
 }

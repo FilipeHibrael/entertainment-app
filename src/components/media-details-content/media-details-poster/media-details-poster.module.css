@@ -2,14 +2,15 @@
   display: grid;
   position: sticky;
   top: 1.5rem;
-  width: 404px;
-  height: 606px;
+  max-width: 404px;
+  max-height: 606px;
   border-radius: 0.5rem;
   overflow: hidden;
 }
 
 .wrapper img {
   object-fit: cover;
+  object-position: center center;
   grid-area: 1/1;
 }
 
@@ -33,5 +34,20 @@
   }
   to {
     background-position: -200%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .wrapper {
+    max-width: 320px;
+    max-height: 480px;
+  }
+}
+
+@media (max-width: 860px) {
+  .wrapper {
+    position: initial;
+    margin: 0 auto;
+    max-width: max-content;
   }
 }

@@ -19,6 +19,7 @@
 
 .genres ul {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -113,4 +114,18 @@
 .rating div {
   display: flex;
   gap: 2rem;
+}
+
+@media (max-width: 1080px) {
+  .container {
+    margin-left: 0;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
 }
